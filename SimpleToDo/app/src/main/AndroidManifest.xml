@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="github.rutvijshah.apps.simpletodo.app.edit_todo_item"
+            android:name=".EditItemActivity"
             android:label="@string/title_activity_edit_todo_item" >
         </activity>
     </application>

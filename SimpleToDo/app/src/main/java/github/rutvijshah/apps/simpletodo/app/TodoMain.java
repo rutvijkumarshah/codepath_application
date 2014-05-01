@@ -81,7 +81,7 @@ public class TodoMain extends ActionBarActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long row_id) {
-                Intent intent=new Intent(TodoMain.this,edit_todo_item.class);
+                Intent intent=new Intent(TodoMain.this,EditItemActivity.class);
                 intent.putExtra(EDIT_ITEM, items.get(pos));
                 intent.putExtra(EDIT_ITEM_INDEX, pos);
                 startActivityForResult(intent,Constants.REQUEST_EDIT_ITEM);

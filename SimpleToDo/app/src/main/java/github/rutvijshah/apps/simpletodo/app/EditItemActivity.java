@@ -14,7 +14,7 @@ import static github.rutvijshah.apps.simpletodo.app.Constants.*;
  * Edit Item Screen
  *
  */
-public class edit_todo_item extends ActionBarActivity {
+public class EditItemActivity extends ActionBarActivity {
 
     private EditText editText;
     private Button saveBtn;
