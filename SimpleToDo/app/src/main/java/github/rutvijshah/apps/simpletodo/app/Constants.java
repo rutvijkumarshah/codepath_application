@@ -1,7 +1,10 @@
 package github.rutvijshah.apps.simpletodo.app;
 
 /**
- * Created by sharu03 on 4/30/14.
+ * Constants
+ *
+ * @author  Rutvijkumar Shah
+ * 
  */
 public class Constants {
     public static final String EDIT_ITEM="SELECTED_ITEM";

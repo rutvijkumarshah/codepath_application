@@ -12,6 +12,7 @@ import static github.rutvijshah.apps.simpletodo.app.Constants.*;
 
 /***
  * Edit Item Screen
+ * @author  Rutvijkumar Shah
  *
  */
 public class EditItemActivity extends ActionBarActivity {
