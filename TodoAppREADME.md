@@ -31,4 +31,4 @@ Screenshots
 ------------
 
 &nbsp;&nbsp;
-<img url="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/AddTask.PNG">
+<img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/AddTask.PNG" width="300">
