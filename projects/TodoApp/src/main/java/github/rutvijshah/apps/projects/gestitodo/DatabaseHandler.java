@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /****
- * DatabaeHandler class provide utility methods to interact with SQLLite db.
+ * DatabaseHandler class provide utility methods to interact with SQLLite db.
  * It provide abstraction and support CRUD operations for TodoItem object.
  * As TodoItem is only primary object for persistence using SQL Query over using ORM.
  *
  */
-public class DatabaseHandler extends SQLiteOpenHelper {
+class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
@@ -80,14 +80,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return executeQuery(selectQuery);
     }
 
-    /***
-     * Return all TodoItems which are marked done
-     * @return
-     */
-    public List<TodoItem> getAllDoneTodos(){
-        String selectQuery="select id,todo,done from todo_items where "+KEY_IS_DONE+"='true'";
-        return executeQuery(selectQuery);
-    }
 
     /****
      * Helper method to execute query and return resulted TodoItems if any.
@@ -116,18 +108,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    /***
-     * Update isDone flag for TodoItem identified by todoId
-     * @param todoId
-     * @param isDone
-     *
-     */
-    public void updateIsDone(Integer todoId,Boolean isDone){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String updateIsDone="update todo_items  set "+KEY_IS_DONE+"='"+isDone.toString().toLowerCase()+"' where "+KEY_ID+"="+todoId;
-        executeQuery(updateIsDone);
-
-    }
+//    /***
+//     * Update isDone flag for TodoItem identified by todoId
+//     * @param todoId
+//     * @param isDone
+//     *
+//     */
+//    public void updateIsDone(Integer todoId,Boolean isDone){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String updateIsDone="update todo_items  set "+KEY_IS_DONE+"='"+isDone.toString().toLowerCase()+"' where "+KEY_ID+"="+todoId;
+//        executeQuery(updateIsDone);
+//
+//    }
 
     /****
      * Update TodoItem in database from todo object
@@ -135,7 +127,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @return no of records updated ( Always 1 )
      */
 
-    public int update(TodoItem todo) {
+    public void update(TodoItem todo) {
         SQLiteDatabase db=null;
         try{
             db = this.getWritableDatabase();
@@ -145,7 +137,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put(KEY_IS_DONE, String.valueOf(todo.isDone()));
 
             // updating row
-            return db.update(TABLE_TODO_ITEMS, values, KEY_ID + " = ?",
+             db.update(TABLE_TODO_ITEMS, values, KEY_ID + " = ?",
                     new String[] { String.valueOf(todo.getId()) });
         }finally {
             closeConnection(null,db);
@@ -191,22 +183,22 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    /****
-     * Utility method for debugging
-     */
-    public void printDB(){
-        StringBuilder sb=new StringBuilder();
-        List<TodoItem> items = getAll();
-        sb.append("\n================================================================================");
-        sb.append("\nID   |   DONE   |   TODO   | ");
-        sb.append("\n================================================================================");
-        for(TodoItem item:items){
-            sb.append("\n----------------------------------------------------------------------------------------");
-            sb.append("\n"+String.format("\n   %d   |   %s   |   %s   | ",item.getId(),String.valueOf(item.isDone()),item.getTodo()));
-        }
-        sb.append("\n================================================================================");
-
-        Log.d("#TABLE#\n", sb.toString());
-    }
+//    /****
+//     * Utility method for debugging
+//     */
+//    public void printDB(){
+//        StringBuilder sb=new StringBuilder();
+//        List<TodoItem> items = getAll();
+//        sb.append("\n================================================================================");
+//        sb.append("\nID   |   DONE   |   TODO   | ");
+//        sb.append("\n================================================================================");
+//        for(TodoItem item:items){
+//            sb.append("\n----------------------------------------------------------------------------------------");
+//            sb.append("\n"+String.format("\n   %d   |   %s   |   %s   | ",item.getId(),String.valueOf(item.isDone()),item.getTodo()));
+//        }
+//        sb.append("\n================================================================================");
+//
+//        Log.d("#TABLE#\n", sb.toString());
+//    }
 
 }

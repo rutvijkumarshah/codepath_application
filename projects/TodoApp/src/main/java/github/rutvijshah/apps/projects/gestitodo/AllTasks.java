@@ -1,12 +1,9 @@
 package github.rutvijshah.apps.projects.gestitodo;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.preference.DialogPreference;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
+import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,14 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /****
  *
@@ -31,13 +25,13 @@ import java.util.List;
 public class AllTasks extends ActionBarActivity {
 
     private TodoItemsAdapter itemAdapter;
-    private ListView listView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_tasks);
+        ListView listView;
         listView = (ListView) findViewById(R.id.lvItems);
 
         //Wiring Items read from files with Adapter to keep track of changes
@@ -81,9 +75,9 @@ public class AllTasks extends ActionBarActivity {
 
 
     /***
-     * Shows dialog for Add/Edit ToodItem
+     * Shows dialog for Add/Edit TodoItem
      * @param isEdit Open Dialog for Add or Edit
-     * @param todoId is mandator only when isEdit is true
+     * @param todoId is mandatory only when isEdit is true
      */
     private void showDialog(final boolean isEdit,final int todoId){
         LayoutInflater layoutInflater = LayoutInflater.from(this);
@@ -92,11 +86,10 @@ public class AllTasks extends ActionBarActivity {
         alertDialogBuilder.setView(promptView);
         final EditText input = (EditText) promptView.findViewById(R.id.add_edit_item);
         final TextView textView = (TextView) promptView.findViewById(R.id.add_edit_lable);
-        TodoItem item=null;
 
         if(isEdit){
             textView.setText("Edit:");
-             item=itemAdapter.getById(todoId);
+            TodoItem item =itemAdapter.getById(todoId);
             input.setText(item.getTodo());
         }else{
             textView.setText("Add:");
@@ -109,15 +102,20 @@ public class AllTasks extends ActionBarActivity {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
                 if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER){
-                    TodoItem todo=null;
-                    String inputString=input.getText().toString();
-                    if(isEdit){
-                        itemAdapter.update(todoId,inputString);
 
-                    }else{
-                        todo=new TodoItem();
-                        todo.setTodo(inputString);
-                        itemAdapter.addTodo(todo);
+                    Editable editable = input.getText();
+                    if(editable!=null ){
+                        String inputString=editable.toString();
+                        if(inputString!=null && !inputString.trim().equals("")){
+                            if(isEdit){
+                                itemAdapter.update(todoId,inputString);
+
+                            }else{
+                                TodoItem todo=new TodoItem();
+                                todo.setTodo(inputString);
+                                itemAdapter.addTodo(todo);
+                            }
+                        }
                     }
                     alertD.cancel();
                     return true;

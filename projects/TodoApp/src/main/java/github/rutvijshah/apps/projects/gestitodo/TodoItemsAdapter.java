@@ -2,21 +2,16 @@ package github.rutvijshah.apps.projects.gestitodo;
 
 import android.content.Context;
 import android.graphics.Paint;
-import android.util.*;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Implements Custom ArrayAdapter for TodoItems
@@ -27,7 +22,7 @@ import java.util.Map;
  * 2. Infinite Scroll
  * 3. Gesture based
  */
-public class TodoItemsAdapter extends ArrayAdapter<TodoItem> {
+class TodoItemsAdapter extends ArrayAdapter<TodoItem> {
 
     //list of todos on which arrayAdapter operates
     final private ArrayList<TodoItem> todos;
@@ -50,7 +45,6 @@ public class TodoItemsAdapter extends ArrayAdapter<TodoItem> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
         final TodoItem todo = getItem(position);
-        final TodoItemsAdapter _this = this;
         final ViewHolder viewHolder; // view lookup cache stored in tag
 
         // Check if an existing view is being reused, otherwise inflate the view
@@ -109,7 +103,7 @@ public class TodoItemsAdapter extends ArrayAdapter<TodoItem> {
 
     /*********
      *
-     *  Following methods provide convient CRUD methods for UI.
+     *  Following methods provide convenient CRUD methods for UI.
      *
      *  These methods encapsulate persistence, adapter & in-memory cache and provide simple interface
      *  For UI to operate on adapter.
@@ -121,7 +115,7 @@ public class TodoItemsAdapter extends ArrayAdapter<TodoItem> {
     }
 
     public void addTodo(TodoItem todo) {
-        int id = (int) db.add(todo);
+        int id = db.add(todo);
         todo.setId(id);
         this.todos.add(todo);
         this.todoMap.put(id, todo);

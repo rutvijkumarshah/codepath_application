@@ -1,0 +1,7 @@
+1. Building List view with Custom objects and Implementing Custom Adapter
+2. Persisting Data in SQLite db
+3. Coordinating Adapter and persistance storage
+4. Theming custom icons with Android Asset Studio (http://romannurik.github.io/)
+5. Theming buil-in widgets(checkbox,edit box) with http://android-holo-colors.com/
+6. Using Android Lint to lint app code and fix potential issues
+7. Building Polish UI

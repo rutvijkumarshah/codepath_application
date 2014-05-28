@@ -18,10 +18,6 @@ public class TodoItem {
         this.done = done;
     }
 
-    public TodoItem(String todo, boolean done) {
-        this.todo = todo;
-        this.done = done;
-    }
 
     public String getTodo() {
         return todo;
