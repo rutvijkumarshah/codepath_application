@@ -8,14 +8,15 @@ Code Structure
 * Source code dir "TodoApp" module
 * Built usig Android Studio (Intellij Idea)
 
-Topic/Concepts Learned while building this applicaiton
+Concepts Learned while building this applicaiton
 --------------
-1. Building List view with Custom objects and Implementing Custom Adapter.
-2. Persisting data in SQLite db.
-3. Co ordinating view Adapter and persistance storage.
-4. Theming custom icons with Android Asset Studio (http://romannurik.github.io/)
-5. Theming buil-in widgets(checkbox,edit box) with http://android-holo-colors.com/
-6. Using Android Lint to lint app code and fix potential issues
+* Building List view with Custom objects and Implementing Custom Adapter.
+* Persisting data in SQLite db.
+* Co ordinating view Adapter and persistance storage.
+* Using Menu and Dialog widgets
+* Theming custom icons with Android Asset Studio (http://romannurik.github.io/)
+* Theming buil-in widgets(checkbox,edit box) with http://android-holo-colors.com/
+* Using Android Lint to lint app code and fix potential issues
 
 App Test
 --------------
