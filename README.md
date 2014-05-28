@@ -6,7 +6,7 @@ This is simple todo app developed as part of entry exerercise to get admission i
 Code Structure
 -----------
 
-* Source code dir SimpleTodo "app" module
+* Source code dir SimpleTodo  module
 * Built usig Android Studio (Intellij Idea)
 
 App Test
