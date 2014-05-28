@@ -1,7 +1,7 @@
 TodoApp
 ====================
 Todo Application developed from scratch after learning exercise for Code Path application (SimpleTodoApp).
-The primary goal of building this application was to get hands on some advance topic of andrioid programming and build MVP Todo App which has nice usable polished UI.
+The primary goal of building this application was to get hands on some advance topics of andrioid programming and build MVP Todo App which has nice usable polished UI.
 
 Code Structure
 -----------
