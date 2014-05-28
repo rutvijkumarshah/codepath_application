@@ -29,10 +29,9 @@ MIT
 
 Screenshots
 ------------
-
-&nbsp;&nbsp;
-<img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/EditTask.PNG" width="300"/>
-<img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/AddTask.PNG" width="300"/>
 &nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/AllTasks.PNG" width="300"/>
 &nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/AddTask.PNG" width="300"/>
+&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/rutvijkumarshah/codepath_application/master/screeshots/TodoApp/EditTask.PNG" width="300"/>
