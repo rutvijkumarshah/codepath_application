@@ -24,3 +24,6 @@ Screenshots
 &nbsp;&nbsp;
 <img src="https://github.com/rutvijkumarshah/codepath_application/raw/master/screeshots/todo_main.png" width="300" />
 <img src="https://github.com/rutvijkumarshah/codepath_application/raw/master/screeshots/edit_item.png" width="300" />
+
+
+[Improved version](https://github.com/rutvijkumarshah/codepath_application/blob/master/TodoAppREADME.md)
